@@ -1,0 +1,154 @@
+/* Fuente base */
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f1f8e9;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: max-content;
+    background-color: black;
+    color: aliceblue;
+    padding: 20px;
+}
+
+header span {
+    font-size: 1rem;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-right: 8px;
+}
+
+/* Modelo de caja */
+.contenedor-flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;         /* Centra horizontalmente */
+  justify-content: center;     
+  padding: 20px;
+}
+
+.materiales, .formulario {
+  width: 90%;
+  max-width: 700px;
+  margin: 10px 0;
+  padding: 10px;
+  border: 2px solid #c8e6c9;
+  border-radius: 10px;
+  background-color: white;
+}
+
+/* Identificador */
+#titulo {
+  font-size: 2.5rem;
+  text-shadow: 1px 1px #2e7d32;
+}
+
+/* Clase */
+.btn {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+/* Hover */
+.btn:hover {
+  background-color: #388e3c;
+}
+
+/* Formulario */
+form input, form select {
+  display: block;
+  margin-bottom: 10px;
+  width: 97%;
+  padding: 10px 0 0 10px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/*imagen*/
+.imagen {
+  display: flex;
+  justify-content: center;  /* Centra la imagen horizontalmente */
+  align-items: center;
+  padding: 10px;
+  overflow: hidden; /* Oculta lo que se salga del contenedor */
+}
+
+.img-animada {
+  width: 100%;
+  max-width: 600px;
+  transition: transform 1s ease-out;
+  transform: translateX(100vw); /* Empieza fuera a la derecha */
+  opacity: 0;
+}
+
+/* Pie de página */
+footer {
+  text-align: center;
+  padding: 15px;
+  color: rgb(6, 6, 6);
+}
+
+footer h2 {
+  font-size: 1rem;
+  margin: 0;
+}
+
+footer p {
+  font-size: 0.6rem;
+  margin: 5px 0;
+  padding: 10px 10px 0
+}
+/* Uso de !important */
+form label {
+  font-weight: bold !important;
+}
+
+/* Mobile First (ya cubierto arriba) */
+
+/* Tablets */
+@media (min-width: 600px) {
+  .formulario, .materiales {
+    width: 80%;
+    margin: auto;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  body {
+    background-image: linear-gradient(to bottom, #f1f8e9, #c8e6c9);
+  }
+
+  .formulario, .materiales {
+    display: inline-block;
+    width: 45%;
+    vertical-align: top;
+    margin: 2%;
+  }
+
+  .imagen {
+    margin: 0 auto;
+    width: 90%;
+  }
+}

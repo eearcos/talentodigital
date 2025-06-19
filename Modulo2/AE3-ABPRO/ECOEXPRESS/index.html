@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ECOEXPRESS - Retiro de reciclaje</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+
+  <!-- Hoja de estilos externa -->
+  <link rel="stylesheet" href="styles.css" />
+  
+  <!-- Estilos embebidos -->
+  <style>
+    header {
+      background: linear-gradient(to right, #4caf50, #81c784);
+      padding: 20px;
+      text-align: center;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Encabezado -->
+  <header>
+    <span> RECITRONIC </span>
+    <nav>
+            <a href="#">Servicios</a>
+            <a href="#">Precios</a>
+            <a href="#">Reserva</a>
+            <a href="#">Contacto</a>
+        </nav>
+  </header>
+
+  <!-- inicio contenedores -->
+   <div class="contenedor-flex">
+
+  <!-- Materiales aceptados -->
+  <section class="agendar">
+    <h2>Recicla tu tecnología con RECITRONIC</h2>
+    <h3>Retiro y reciclaje responsable de dispositivos electrónicos. Rápido, fácil y seguro</h3>
+    <button> Agendar retiro </button>
+  </section>
+
+  <div>
+    <p> ¿Qué reciclamos?</p>
+    <img src="img/reciclaje.png" alt="Reciclaje" />
+  </div>
+
+  <div>
+    <p> Precios por volumen</p>
+    <div>
+      <p> Se cobra según volumen estimado de los dispositivos reciclados</p>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Volumen</th>
+          <th>Precio</th>
+          <th>tiempo estimado de retiro</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>0 - 0,5 m3</td>
+          <td>$10.000</td>
+          <td>24 horas</td>
+        </tr>
+        <tr>
+          <td>0,5 - 1 m3</td>
+          <td>$18.000</td>
+          <td>48 horas</td>
+        </tr>
+        <tr>
+          <td>1- 2 m3</td>
+          <td>$30.000</td>
+          <td>72 horas</td>
+        </tr>
+      </tbody>
+      </table>
+  </div>
+  </div>
+
+  <!-- Formulario de reserva -->
+  <section class="formulario">
+    <h2>Reserva tu retiro</h2>
+    <form>
+      <label for="nombre">Nombre completo:</label>
+      <input type="text" id="nombre" required />
+
+      <label for="direccion">Dirección de retiro:</label>
+      <input type="text" id="direccion" required />
+
+      <label for="date">Fecha deseada:</label>
+      <input type="date" id="date" required />
+
+      <label for="volumen">Volumen estimado (m3)</label>
+      <input type="number" id="volumen" min="1" required />
+      <label for="email">Correo electrónico:</label>
+      <input type="email" id="email" required />
+      <button type="submit" class="btn">Enviar solicitud</button>
+    </form>
+  </section>
+
+  </div>
+
+  <!-- Pie de página -->
+  <footer>
+    <h2> ¿Dudas o consultas?</h2>
+    <p>Contáctanos a traves de nuestro correo o redes sociales</p>
+    <p>contacto@recitronic.cl</p>
+  </footer>
+
+  <!-- Script JS -->
+  <script src="script.js"></script>
+
+</body>
+</html>

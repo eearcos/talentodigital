@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FoodHero - Salva comida, ahorra dinero</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- Encabezado y navegación -->
+  <header>
+    <h1>FoodHero</h1>
+    <nav>
+      <ul>
+        <li><a href="#como-funciona">¿Cómo funciona?</a></li>
+        <li><a href="#restaurantes">Restaurantes</a></li>
+        <li><a href="#reserva">Reservar</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Sección ¿Cómo funciona? -->
+  <section id="como-funciona">
+    <h2>¿Cómo funciona?</h2>
+    <p>FoodHero conecta restaurantes con excedentes de comida con personas que quieren ahorrar. Reserva tu comida, págala en línea y recógela a la hora indicada. Así, ayudas al planeta y ahorras dinero.</p>
+  </section>
+
+  <!-- Sección de Restaurantes y Ofertas -->
+  <section id="restaurantes">
+    <h2>Restaurantes Asociados</h2>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Nombre del Restaurante</th>
+          <th>Oferta</th>
+          <th>Precio</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>La Pizzería Feliz</td>
+          <td>Combo de 2 porciones + bebida</td>
+          <td>$3.50</td>
+        </tr>
+        <tr>
+          <td>Sushi Rápido</td>
+          <td>6 piezas variadas</td>
+          <td>$4.00</td>
+        </tr>
+        <tr>
+          <td>Panadería El Trigo</td>
+          <td>Bolsa con 3 panes surtidos</td>
+          <td>$2.00</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Sección del Formulario de Reserva -->
+  <section id="reserva">
+    <h2>Reservar Pedido</h2>
+    <form>
+      <label for="nombre">Nombre completo:</label>
+      <input type="text" id="nombre" name="nombre" required /><br />
+
+      <label for="restaurante">Selecciona un restaurante:</label>
+      <select id="restaurante" name="restaurante" required>
+        <option value="">--Seleccionar--</option>
+        <option value="pizzeria">La Pizzería Feliz</option>
+        <option value="sushi">Sushi Rápido</option>
+        <option value="panaderia">Panadería El Trigo</option>
+      </select><br />
+
+      <label for="hora">Hora de recogida:</label>
+      <input type="time" id="hora" name="hora" required /><br />
+
+      <label for="comentarios">Comentarios adicionales:</label><br />
+      <textarea id="comentarios" name="comentarios" rows="3" cols="30"></textarea><br />
+
+      <button type="submit">Reservar</button>
+    </form>
+  </section>
+
+  <!-- Pie de página -->
+  <footer id="contacto">
+    <p>Contacto: foodhero@email.com | Tel: +56 9 1234 5678</p>
+    <p>Síguenos en:
+      <a href="#">Facebook</a> |
+      <a href="#">Instagram</a> |
+      <a href="#">Twitter</a>
+    </p>
+  </footer>
+</body>
+</html>

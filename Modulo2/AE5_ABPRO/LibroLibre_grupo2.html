@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LibroLibre</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script> 
+</head>
+<body>
+    <header class="navbar">
+    <div class="logo">LibroLibre</div>
+    <nav class="nav-links">
+        <a href="#catalogo">Catálogo</a>
+        <a href="#registro">Registro</a>
+        <a href="#nosotros">Sobre Nosotros</a>
+    </nav>
+    </header>
+
+    <main>
+    <section id="catalogo">
+        <h2>Catálogo de libros</h2>
+        <input id="textbox" type="text" placeholder="Buscar por título, autor o género" oninput="mostrarOcultarDiv()">
+        <button>Buscar</button>
+
+    <div class="libro" id="libro1">
+        <h3>El Principito</h3>
+        <p><strong>Autor:</strong> Antoine de Saint-Exupéry</p>
+        <p><strong>Género:</strong> Ficción</p>
+        <p>Una historia poética sobre un pequeño príncipe y sus viajes.</p>
+    </div>
+
+    <div class="libro" id="libro2">
+        <h3>Clean Code</h3>
+        <p><strong>Autor:</strong> Robert C. Martin</p>
+        <p><strong>Género:</strong> Programación</p>
+        <p>Una guía para escribir código limpio y mantenible.</p>
+    </div>
+
+    <div class="libro" id="libro3">
+        <h3>Cien Años de Soledad</h3>
+        <p><strong>Autor:</strong> Gabriel García Márquez</p>
+        <p><strong>Género:</strong> Realismo mágico</p>
+        <p>Una saga familiar ambientada en el mítico pueblo de Macondo.</p>
+    </div>
+    </section>
+
+    <section id="registro">
+        <h2>Registro de usuarios</h2>
+        <input type="text" placeholder="Nombre completo">
+        <input type="email" placeholder="Correo electrónico">
+        <input type="password" placeholder="Contraseña">
+        <button>Registrarse</button>
+    </section>
+
+    <section id="nosotros">
+        <h2>Sobre Nosotros</h2>
+        <p>LibroLibre es una biblioteca digital creada por tres entusiastas de la lectura con el objetivo de facilitar el acceso a libros electrónicos y audiolibros de manera simple y eficiente.</p>
+    </section>
+</main>
+</body>
+</html>
