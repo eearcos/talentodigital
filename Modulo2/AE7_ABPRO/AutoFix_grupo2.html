@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AutoFix - Reparación de Vehículos</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>AutoFix - Reparación de Vehículos a Domicilio</h1>
+  </header>
+
+  <section class="servicios">
+    <h2>Servicios y Precios</h2>
+    <div class="cards">
+      <div class="card">
+        <img src="img/aceite.png" alt="Cambio de aceite">
+        <p><strong>Cambio de aceite</strong><br>Precio: $500 MXN</p>
+      </div>
+      <div class="card">
+        <img src="img/frenos.png" alt="Revisión de frenos">
+        <p><strong>Revisión de frenos</strong><br>Precio: $700 MXN</p>
+      </div>
+      <div class="card">
+        <img src="img/diagnostico.png" alt="Diagnóstico eléctrico">
+        <p><strong>Diagnóstico eléctrico</strong><br>Precio: $600 MXN</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="formulario">
+    <h2>Solicitar Reparación</h2>
+    <form>
+      <label>Nombre del Cliente</label>
+      <input type="text" placeholder="Ej: Juan Pérez" required>
+
+      <label>Tipo de Reparación</label>
+      <select required>
+        <option value="">Selecciona un servicio</option>
+        <option>Cambio de aceite</option>
+        <option>Revisión de frenos</option>
+        <option>Diagnóstico eléctrico</option>
+      </select>
+
+      <label>Descripción</label>
+      <textarea rows="4" placeholder="Describe el problema..."></textarea>
+
+      <label>Agendar Cita</label>
+      <input type="datetime-local" required>
+
+      <h3>Información de Pago (simulado)</h3>
+      <input type="text" placeholder="**** **** **** 1234" maxlength="19" required>
+      <input type="text" placeholder="Nombre del titular" required>
+      <input type="text" placeholder="CVV" maxlength="3" required>
+
+      <button type="submit">Confirmar Solicitud</button>
+    </form>
+  </section>
+</body>
+</html>
