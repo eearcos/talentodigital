@@ -35,7 +35,6 @@ body {
     transform: scale(1.05);
 }
 
-/* Modal Styles */
 .modal {
   display: none;
   position: fixed;
@@ -67,8 +66,7 @@ body {
 }
 
 .nav-btn {
-  position: absolute;
-  top: 50%;
+  position:absolute;
   padding: 10px 20px;
   background-color: #fff;
   border: none;
