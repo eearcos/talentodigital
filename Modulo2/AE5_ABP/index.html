@@ -6,6 +6,7 @@
         <title>Perfil de Usuario</title>
         <link rel="stylesheet" href="style.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+        <script src="script.js" defer></script>    
     </head>
 <body>
     <header>
@@ -51,7 +52,7 @@
 
             <div class="column col-2">
                 <section class="solicitudes">
-                    <h2>Solicitudes de Conexión (2)</h2>
+                    <h2>Solicitudes de conexión <span id="contador-solicitudes">2 </span></h2>
                     <div class="solicitud">
                         <img src="/Modulo2/AE3-ABP/fotos/tulio.webp" />
                         <span>Tulio Triviño</span>
@@ -66,7 +67,8 @@
                 </section>
 
                 <section class="conexiones">
-                    <h3>Tus Conexiones (500+)</h3>
+                    <h2>Tus Conexiones <span id="contador-conexiones">6</span></h2>
+                    <div class="item-conexion">
                     <ul>
                         <li><img src="/Modulo2/AE3-ABP/fotos/rosario.webp" /> Rosario Central</li>
                         <li><img src="/Modulo2/AE3-ABP/fotos/mico.jpg" /> Mico el Micofono</li>
@@ -75,6 +77,7 @@
                         <li><img src="/Modulo2/AE3-ABP/fotos/juanin.webp" /> Juanin</li>
                         <li><img src="/Modulo2/AE3-ABP/fotos/patana.webp" /> Patana</li>
                     </ul>
+                    </div>
                 </section>
             </div>
         </div>
