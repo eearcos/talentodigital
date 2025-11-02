@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CineEsteban</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container my-5">
+    <h1 class="text-center mb-4">🎬 Bienvenidos a CineEsteban</h1>
+    <div class="row" id="galeria">
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="/dune2.jpeg" class="card-img-top" alt="Dune Parte 2">
+          <div class="card-body">
+            <h5 class="card-title">Dune Parte 2</h5>
+            <button class="btn btn-primary reservar-btn" data-pelicula="Dune Parte 2">Reservar</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="/oppen.jpg" class="card-img-top" alt="Oppenheimer">
+          <div class="card-body">
+            <h5 class="card-title">Oppenheimer</h5>
+            <button class="btn btn-primary reservar-btn" data-pelicula="Oppenheimer">Reservar</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="/barbie.jpeg" class="card-img-top" alt="Barbie">
+          <div class="card-body">
+            <h5 class="card-title">Barbie</h5>
+            <button class="btn btn-primary reservar-btn" data-pelicula="Barbie">Reservar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="formModal" tabindex="-1" aria-labelledby="formModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="formModalLabel">Reserva tu Entrada</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="reservaForm">
+                      <div class="mb-3">
+                        <label for="pelicula" class="form-label">Película</label>
+                        <input type="text" class="form-control" id="pelicula" readonly>
+                      </div>
+                      <div class="mb-3">
+                        <label for="horario" class="form-label">Horario</label>
+                        <select class="form-select" id="horario">
+                          <option>12:00</option>
+                          <option>15:00</option>
+                          <option>18:00</option>
+                          <option>21:00</option>
+                        </select>
+                      </div>
+                      <div class="mb-3">
+                        <label for="asiento" class="form-label">N° de Asiento</label>
+                        <input type="number" class="form-control" id="asiento" min="1" max="100" required>
+                      </div>
+                      <div class="mb-3">
+                        <label for="pago" class="form-label">Método de Pago</label>
+                        <select class="form-select" id="pago">
+                          <option>Tarjeta de crédito</option>
+                          <option>Débito</option>
+                          <option>Transferencia</option>
+                        </select>
+                      </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary" id="btnReservar">Reservar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="confirmacion" class="alert alert-success mt-4" style="display:none;"></div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
