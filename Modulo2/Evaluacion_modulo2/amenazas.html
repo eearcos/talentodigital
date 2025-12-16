@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ciberseguridad | Amenazas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">🛡️ CiberSegura</a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="amenazas.html">Amenazas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="consejos.html">Consejos</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container my-5">
+        <h2 class="text-center mb-4">Amenazas Digitales Comunes</h2>
+        
+        <div class="row g-4">
+            <div class="col-md-3">
+                <div class="card h-100 shadow-sm threat-card">
+                    <div class="card-body">
+                        <h5 class="card-title text-danger">🎣 Phishing</h5>
+                        <p class="card-text">Suplantación de identidad para robar datos confidenciales como contraseñas.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card h-100 shadow-sm threat-card">
+                    <div class="card-body">
+                        <h5 class="card-title text-danger">🔒 Ransomware</h5>
+                        <p class="card-text">Malware que secuestra tus archivos y pide un rescate económico para liberarlos.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card h-100 shadow-sm threat-card">
+                    <div class="card-body">
+                        <h5 class="card-title text-danger">🦠 Malware</h5>
+                        <p class="card-text">Software malicioso diseñado para dañar o infiltrarse en sistemas sin permiso.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card h-100 shadow-sm threat-card">
+                    <div class="card-body">
+                        <h5 class="card-title text-danger">🚫 Ataques DDoS</h5>
+                        <p class="card-text">Ataque de denegación de servicio que colapsa un servidor con tráfico falso.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h3 class="mt-5 mb-3">Casos Reales Históricos</h3>
+        <div class="accordion" id="accordionCasos">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#caso1">
+                        WannaCry (2017) - Ransomware
+                    </button>
+                </h2>
+                <div id="caso1" class="accordion-collapse collapse show" data-bs-parent="#accordionCasos">
+                    <div class="accordion-body">
+                        Afectó a más de 200,000 computadoras en 150 países, incluyendo el sistema de salud del Reino Unido y Telefónica en España.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#caso2">
+                        Yahoo! Breach (2013-2014) - Robo de Datos
+                    </button>
+                </h2>
+                <div id="caso2" class="accordion-collapse collapse" data-bs-parent="#accordionCasos">
+                    <div class="accordion-body">
+                        Uno de los mayores robos de datos de la historia, afectando a 3 mil millones de  cuentas de usuarios.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white text-center py-3 mt-5">
+        <p>&copy; 2025 Proyecto Ciberseguridad</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

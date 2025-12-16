@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h1>¿Estás seguro de eliminar?</h1>
+    <p>Vas a eliminar permanentemente: <strong>{{ objeto }}</strong></p>
+    
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Sí, Eliminar</button>
+    </form>
+    
+    <a href="{% url 'index' %}">Cancelar</a>
+</body>
+</html>

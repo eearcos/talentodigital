@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h1>{{ titulo }}</h1>
+    
+    <form method="post">
+        {% csrf_token %}
+        <table>
+            {{ form.as_table }}
+        </table>
+        <br>
+        <button type="submit">Guardar</button>
+    </form>
+    
+    <br>
+    <a href="{% url 'index' %}">Volver al inicio</a>
+</body>
+</html>

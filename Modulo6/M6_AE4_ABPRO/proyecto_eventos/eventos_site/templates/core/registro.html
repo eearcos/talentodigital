@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card shadow">
+            <div class="card-header bg-white">
+                <h4 class="text-center text-primary">Nuevo Registro</h4>
+            </div>
+            <div class="card-body">
+                <form method="post">
+                    {% csrf_token %}
+                    
+                    <h5 class="border-bottom pb-2">1. Datos del Evento</h5>
+                    <div class="mb-3">
+                        <label>Nombre del Evento</label>
+                        {{ evento_form.nombre }}
+                        <div class="text-danger small">{{ evento_form.nombre.errors }}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label>Fecha</label>
+                            {{ evento_form.fecha }}
+                            <div class="text-danger small">{{ evento_form.fecha.errors }}</div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label>Ubicación (Opcional)</label>
+                            {{ evento_form.ubicacion }}
+                        </div>
+                    </div>
+
+                    <h5 class="border-bottom pb-2 mt-4">2. Primer Participante</h5>
+                    <div class="mb-3">
+                        <label>Nombre Completo</label>
+                        {{ participante_form.nombre }}
+                    </div>
+                    <div class="mb-3">
+                        <label>Correo Electrónico</label>
+                        {{ participante_form.email }}
+                        <div class="text-danger small">{{ participante_form.email.errors }}</div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary w-100 mt-3">Guardar Registro</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

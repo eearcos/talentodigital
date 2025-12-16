@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="p-5 mb-4 bg-light rounded-3 shadow-sm text-center">
+    <h1 class="display-4">Bienvenido Chef</h1>
+    <p class="lead">Las mejores recetas para salvar el semestre.</p>
+</div>
+
+<div class="row">
+    {% for receta in lista_recetas %}
+    <div class="col-md-4 mb-4">
+        <div class="card h-100">
+            {% if receta.imagen %}
+            <img src="{{ receta.imagen.url }}" class="card-img-top" style="height: 200px; object-fit: cover;">
+            {% endif %}
+            <div class="card-body">
+                <h5>{{ receta.nombre }}</h5>
+                <a href="{% url 'detalle_receta' receta.pk %}" class="btn btn-primary w-100">Ver Receta</a>
+            </div>
+        </div>
+    </div>
+    {% empty %}
+    <p>No hay recetas aún. ¡Agrega una desde el admin!</p>
+    {% endfor %}
+</div>
+{% endblock %}

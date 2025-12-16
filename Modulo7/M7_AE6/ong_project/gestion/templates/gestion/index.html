@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head><title>ONG Gestión</title></head>
+<body>
+    <h1>Panel de Gestión ONG</h1>
+
+    <h2>Voluntarios</h2>
+    <a href="{% url 'crear_voluntario' %}">Nuevo Voluntario</a>
+    <ul>
+        {% for v in voluntarios %}
+            <li>
+                <strong>{{ v.nombre }}</strong> ({{ v.email }})
+                <a href="{% url 'editar_voluntario' v.id %}">✏️ Editar</a>
+                <a href="{% url 'eliminar_voluntario' v.id %}">❌ Eliminar</a>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <hr>
+
+    <h2>Eventos</h2>
+    <a href="{% url 'crear_evento' %}">Nuevo Evento</a>
+    <ul>
+        {% for e in eventos %}
+            <li>
+                <strong>{{ e.titulo }}</strong> - {{ e.fecha }}
+                <br>Asistentes: {{ e.voluntarios.count }}
+                <br>
+                <a href="{% url 'editar_evento' e.id %}">✏️ Editar</a>
+                <a href="{% url 'eliminar_evento' e.id %}">❌ Eliminar</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

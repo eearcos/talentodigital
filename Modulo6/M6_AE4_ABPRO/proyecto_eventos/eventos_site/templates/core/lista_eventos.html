@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Eventos Próximos</h2>
+    
+    {% if perms.core.add_evento %}
+        <a href="{% url 'crear_evento' %}" class="btn btn-success mb-3">+ Nuevo Evento</a>
+    {% endif %}
+
+    <div class="list-group">
+        {% for evento in eventos %}
+            <div class="list-group-item d-flex justify-content-between align-items-center">
+                <div>
+                    <h5>{{ evento.nombre }}</h5>
+                    <small>{{ evento.fecha }} - {{ evento.ubicacion }}</small>
+                </div>
+                <div>
+                    {% if perms.core.change_evento %}
+                        <a href="{% url 'editar_evento' evento.pk %}" class="btn btn-sm btn-warning">Editar</a>
+                    {% endif %}
+                    
+                    {% if perms.core.delete_evento %}
+                        <a href="{% url 'eliminar_evento' evento.pk %}" class="btn btn-sm btn-danger">Eliminar</a>
+                    {% endif %}
+                </div>
+            </div>
+        {% empty %}
+            <p>No hay eventos registrados.</p>
+        {% endfor %}
+    </div>
+{% endblock %}
