@@ -1,0 +1,33 @@
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1350&q=80');
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+    margin-top: 56px; /* Altura Navbar */
+}
+
+/* Efecto Hover Cards */
+.hover-effect {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-effect:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15) !important;
+}
+
+/* Navbar */
+.navbar-brand {
+    font-size: 1.5rem;
+}
+
+/* Botones */
+.btn-primary {
+    background-color: #0d6efd;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #0b5ed7;
+}
