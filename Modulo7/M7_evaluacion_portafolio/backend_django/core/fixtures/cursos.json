@@ -5,7 +5,8 @@
     "fields": {
       "nombre": "Máster en E-commerce",
       "precio": 150000,
-      "descripcion": "Aprende a gestionar tiendas en Shopify y VTEX. Estrategias D2C, B2B y logística avanzada para escalar ventas."
+      "descripcion": "Aprende a gestionar tiendas en Shopify y VTEX. Estrategias D2C, B2B y logística avanzada.",
+      "imagen_url": "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=800&q=80"
     }
   },
   {
@@ -13,8 +14,9 @@
     "pk": 2,
     "fields": {
       "nombre": "Growth Marketing & Data",
-      "descripcion": "Domina la experimentación rápida, Funnels de conversión y Analítica avanzada para tomar decisiones basadas en datos.",
-      "precio": 120000
+      "descripcion": "Domina la experimentación rápida, Funnels de conversión y Analítica avanzada.",
+      "precio": 120000,
+      "imagen_url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80"
     }
   },
   {
@@ -22,17 +24,9 @@
     "pk": 3,
     "fields": {
       "nombre": "Performance Ads",
-      "descripcion": "Curso intensivo de Meta Ads, Google Ads y TikTok Ads. Aprende a maximizar el ROAS y optimizar presupuestos.",
-      "precio": 90000
-    }
-  },
-  {
-    "model": "core.curso",
-    "pk": 4,
-    "fields": {
-      "nombre": "Email Marketing Automation",
-      "descripcion": "Crea flujos automatizados en Klaviyo y Mailchimp. Recuperación de carritos y fidelización de clientes.",
-      "precio": 75000
+      "descripcion": "Curso intensivo de Meta Ads, Google Ads y TikTok Ads. Maximiza el ROAS.",
+      "precio": 90000,
+      "imagen_url": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80"
     }
   }
 ]
