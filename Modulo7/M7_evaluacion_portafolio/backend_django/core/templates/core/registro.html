@@ -1,13 +1,32 @@
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-<div class="container mt-5" style="max-width: 500px;">
-    <div class="card">
-        <div class="card-header bg-success text-white">Inscripción</div>
-        <div class="card-body">
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-card" style="max-width: 500px;">
+            <div class="text-center mb-4">
+                <h3 class="fw-bold">Crear Cuenta</h3>
+                <p class="text-muted small">Únete a la mejor comunidad digital</p>
+            </div>
+            
             <form method="post">
                 {% csrf_token %}
                 {{ form.as_p }}
-                <button type="submit" class="btn btn-primary w-100">Guardar</button>
+                <button type="submit" class="btn btn-brand w-100 mt-3">Completar Registro</button>
             </form>
+            
+            <div class="text-center mt-4">
+                <a href="{% url 'login' %}" class="small text-muted">
+                    ¿Ya tienes cuenta? <span class="fw-bold text-dark">Ingresa aquí</span>
+                </a>
+            </div>
         </div>
     </div>
-</div>
+</body>
+</html>

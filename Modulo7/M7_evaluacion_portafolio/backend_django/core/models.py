@@ -4,6 +4,7 @@ class Curso(models.Model):
     nombre = models.CharField(max_length=100, verbose_name="Nombre del Curso")
     precio = models.IntegerField(verbose_name="Precio (CLP)")
     descripcion = models.TextField(verbose_name="Descripción")
+    imagen_url = models.URLField(verbose_name="URL de la Imagen", blank=True, null=True)
 
     def __str__(self):
         return self.nombre

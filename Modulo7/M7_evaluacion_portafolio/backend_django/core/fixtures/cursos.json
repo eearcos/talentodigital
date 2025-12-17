@@ -1,0 +1,32 @@
+[
+    {
+        "model": "core.curso",
+        "pk": 1,
+        "fields": {
+            "nombre": "Máster en E-commerce",
+            "descripcion": "Domina Shopify, VTEX y estrategias de logística D2C.",
+            "precio": 150000,
+            "imagen_url": "https://images.unsplash.com/photo-1556761175-5973dc0f32e7"
+        }
+    },
+    {
+        "model": "core.curso",
+        "pk": 2,
+        "fields": {
+            "nombre": "Growth Marketing & Data",
+            "descripcion": "Aprende experimentación rápida, Funnels y Analítica avanzada.",
+            "precio": 120000,
+            "imagen_url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f"
+        }
+    },
+    {
+        "model": "core.curso",
+        "pk": 3,
+        "fields": {
+            "nombre": "Performance Ads",
+            "descripcion": "Maximiza tu ROAS con Meta Ads, Google Ads y TikTok Ads.",
+            "precio": 90000,
+            "imagen_url": "https://images.unsplash.com/photo-1551288049-bebda4e38f71"
+        }
+    }
+]
