@@ -70,10 +70,18 @@ def listar_cursos():
 def calcular_cotizacion():
     print("\n--- COTIZADOR ---")
     listar_cursos()
-    seleccion = input("Escribe el nombre del curso tal cual sale arriba: ")
-
-    if seleccion in cursos_disponibles:
-        precio_base = cursos_disponibles[seleccion]
+    # MEJORA UX: Convertimos input a minúsculas
+    seleccion_input = input("Escribe el nombre del curso: ").lower()
+    
+    # Lógica de búsqueda flexible
+    curso_encontrado = None
+    for curso_real in cursos_disponibles:
+        if curso_real.lower() == seleccion_input:
+            curso_encontrado = curso_real
+            break
+            
+    if curso_encontrado:
+        precio_base = cursos_disponibles[curso_encontrado]
         descuento = 0
         edad = int(input("Confirma tu edad para ver descuentos: "))
 
@@ -102,7 +110,6 @@ def verificar_aprobacion():
         nota2 = float(input("Nota modulo 2 (1.0 - 7.0): "))
         nota3 = float(input("Nota modulo 3 (1.0 - 7.0): "))
         
-        # VALIDACIÓN NUEVA: Rango de notas
         if not (1.0 <= nota1 <= 7.0 and 1.0 <= nota2 <= 7.0 and 1.0 <= nota3 <= 7.0):
             print(">> Error: Las notas deben estar entre 1.0 y 7.0")
             return
