@@ -21,7 +21,7 @@ def limpiar_pantalla():
 def mostrar_menu():
     print("\n--- GROWTH ACADEMY: SISTEMA INTERNO ---")
     print("1. Registrar nuevo alumno")
-    print("2. Ver alumnos inscritos")   # <--- NUEVA OPCIÓN
+    print("2. Ver alumnos inscritos")
     print("3. Listar cursos disponibles")
     print("4. Calcular cotización (con descuentos)")
     print("5. Verificar aprobación de alumno")
@@ -53,7 +53,7 @@ def registrar_alumno():
     alumnos_inscritos.append(nuevo_alumno)
     print(f">> Listo! Alumno {nombre} guardado.")
 
-def ver_alumnos():   # <--- NUEVA FUNCIÓN
+def ver_alumnos():
     print("\n--- LISTA DE ALUMNOS ---")
     if len(alumnos_inscritos) == 0:
         print(">> No hay alumnos registrados todavía.")
@@ -70,16 +70,10 @@ def listar_cursos():
 def calcular_cotizacion():
     print("\n--- COTIZADOR ---")
     listar_cursos()
-    seleccion_input = input("Escribe el nombre del curso: ").lower()
-    
-    curso_encontrado = None
-    for curso_real in cursos_disponibles:
-        if curso_real.lower() == seleccion_input:
-            curso_encontrado = curso_real
-            break
-            
-    if curso_encontrado:
-        precio_base = cursos_disponibles[curso_encontrado]
+    seleccion = input("Escribe el nombre del curso tal cual sale arriba: ")
+
+    if seleccion in cursos_disponibles:
+        precio_base = cursos_disponibles[seleccion]
         descuento = 0
         edad = int(input("Confirma tu edad para ver descuentos: "))
 
@@ -104,9 +98,15 @@ def calcular_cotizacion():
 def verificar_aprobacion():
     print("\n--- VERIFICADOR DE NOTAS ---")
     try:
-        nota1 = float(input("Nota modulo 1: "))
-        nota2 = float(input("Nota modulo 2: "))
-        nota3 = float(input("Nota modulo 3: "))
+        nota1 = float(input("Nota modulo 1 (1.0 - 7.0): "))
+        nota2 = float(input("Nota modulo 2 (1.0 - 7.0): "))
+        nota3 = float(input("Nota modulo 3 (1.0 - 7.0): "))
+        
+        # VALIDACIÓN NUEVA: Rango de notas
+        if not (1.0 <= nota1 <= 7.0 and 1.0 <= nota2 <= 7.0 and 1.0 <= nota3 <= 7.0):
+            print(">> Error: Las notas deben estar entre 1.0 y 7.0")
+            return
+
     except ValueError:
         print(">> Error: Tienen que ser numeros (ej: 5.5)")
         return
@@ -128,7 +128,7 @@ def main():
 
         if opcion == "1":
             registrar_alumno()
-        elif opcion == "2":         # <--- NUEVA LÓGICA
+        elif opcion == "2":
             ver_alumnos()
         elif opcion == "3":
             listar_cursos()
@@ -136,7 +136,7 @@ def main():
             calcular_cotizacion()
         elif opcion == "5":
             verificar_aprobacion()
-        elif opcion == "6":         # <--- SALIR ES AHORA EL 6
+        elif opcion == "6":
             print("Cerrando... Nos vemos!")
             break
         else:
