@@ -1,3 +1,6 @@
 from django.contrib import admin
+from .models import Curso, Estudiante
 
-# Register your models here.
+# Esto permite gestionar los datos desde /admin
+admin.site.register(Curso)
+admin.site.register(Estudiante)
