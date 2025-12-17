@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Lista de Productos</h2>
+<div class="row mb-3">
+    <div class="col-md-8">
+        <form method="GET" class="d-flex">
+            <input class="form-control me-2" type="search" name="q" placeholder="Buscar nombre..." value="{{ request.GET.q|default:'' }}">
+            <select name="categoria" class="form-select me-2">
+                <option value="">Todas las categorías</option>
+                {% for cat in categorias %}
+                <option value="{{ cat.id }}" {% if request.GET.categoria == cat.id|stringformat:"i" %}selected{% endif %}>{{ cat.nombre }}</option>
+                {% endfor %}
+            </select>
+            <button class="btn btn-outline-success" type="submit">Filtrar</button>
+        </form>
+    </div>
+    <div class="col-md-4 text-end">
+        <a href="{% url 'crear_producto' %}" class="btn btn-primary">Crear Nuevo Producto</a>
+    </div>
+</div>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Categoría</th>
+            <th>Precio</th>
+            <th>Etiquetas</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for prod in productos %}
+        <tr>
+            <td>{{ prod.nombre }}</td>
+            <td>{{ prod.categoria.nombre }}</td>
+            <td>${{ prod.precio }}</td>
+            <td>
+                {% for tag in prod.etiquetas.all %}
+                    <span class="badge bg-secondary">{{ tag.nombre }}</span>
+                {% endfor %}
+            </td>
+            <td>
+                <a href="{% url 'detalle_producto' prod.id %}" class="btn btn-sm btn-info">Ver</a>
+                <a href="{% url 'editar_producto' prod.id %}" class="btn btn-sm btn-warning">Editar</a>
+                <a href="{% url 'eliminar_producto' prod.id %}" class="btn btn-sm btn-danger">Eliminar</a>
+            </td>
+        </tr>
+        {% empty %}
+        <tr><td colspan="5">No hay productos disponibles.</td></tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

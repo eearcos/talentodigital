@@ -1,0 +1,15 @@
+# Django
+*.log
+*.pot
+*.pyc
+__pycache__/
+db.sqlite3
+media/
+
+# Entorno Virtual (¡Muy importante no subir esto!)
+venv/
+env/
+.env
+
+# Mac y Sistema
+.DS_Store

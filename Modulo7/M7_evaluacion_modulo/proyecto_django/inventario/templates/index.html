@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="p-5 mb-4 bg-light rounded-3">
+    <div class="container-fluid py-5">
+        <h1 class="display-5 fw-bold">Bienvenido al Sistema</h1>
+        <p class="col-md-8 fs-4">Gestiona productos, categorías y etiquetas de forma eficiente.</p>
+        <div class="row mt-4">
+            <div class="col-md-4">
+                <div class="card text-white bg-primary mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Productos</h5>
+                        <p class="card-text h2">{{ total_productos }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-white bg-success mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Categorías</h5>
+                        <p class="card-text h2">{{ total_categorias }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-white bg-info mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Etiquetas</h5>
+                        <p class="card-text h2">{{ total_etiquetas }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <small class="text-muted">{{ mensaje_sql }}</small>
+    </div>
+</div>
+{% endblock %}

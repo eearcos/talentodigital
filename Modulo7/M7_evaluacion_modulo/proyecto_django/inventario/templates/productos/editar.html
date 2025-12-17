@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Editar Producto: {{ producto.nombre }}</h2>
+<form method="post">
+    {% csrf_token %}
+    <h4 class="mt-3">Datos Principales</h4>
+    {{ form_producto.as_p }}
+    <h4 class="mt-3">Detalles Técnicos</h4>
+    {{ form_detalle.as_p }}
+    <button type="submit" class="btn btn-warning mt-3">Actualizar</button>
+    <a href="{% url 'lista_productos' %}" class="btn btn-secondary mt-3">Cancelar</a>
+</form>
+{% endblock %}
