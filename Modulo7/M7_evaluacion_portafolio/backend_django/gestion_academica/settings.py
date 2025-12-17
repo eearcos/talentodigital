@@ -23,9 +23,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-8=85+3rgt2#q9we&^qr%e+7)!bp34dm5c_3rfvj7#at9q)8v99'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = ['*']
+DEBUG = False
+ALLOWED_HOSTS = ['talentodigital.onrender.com'] # Pon aquí tu dominio de Render
 
 
 # Application definition

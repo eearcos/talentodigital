@@ -16,15 +16,30 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+# 1. Importamos las vistas de autenticación de Django (Login/Logout)
 from django.contrib.auth import views as auth_views
+# 2. Importamos tus vistas desde la app 'core'
 from core import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+
+    # --- AUTENTICACIÓN (LOGIN / LOGOUT) ---
+    # Como no tienes vista de login en views.py, usamos la de Django
+    # pero le decimos que use TU template (core/login.html)
+    path('accounts/login/', auth_views.LoginView.as_view(template_name='core/login.html'), name='login'),
+    # Al salir, Django redirigirá al home automáticamente si está configurado en settings
+    path('accounts/logout/', auth_views.LogoutView.as_view(), name='logout'),
+
+    # --- TUS RUTAS (VISTAS) ---
     path('', views.home, name='home'),
+
+    # --- LA SOLUCIÓN AL ERROR ---
+    # Aquí hacemos el "puente".
+    # Aunque tu función se llama 'inscribir_alumno', le ponemos nombre='inscripcion'
+    # para que el template {% url 'inscripcion' %} la encuentre.
     path('inscripcion/', views.inscribir_alumno, name='inscripcion'),
     
-    # Rutas de Autenticación (Login/Logout)
-    path('accounts/login/', auth_views.LoginView.as_view(template_name='core/login.html'), name='login'),
-    path('accounts/logout/', auth_views.LogoutView.as_view(next_page='/'), name='logout'),
+    # Agregamos también 'registro' apuntando a lo mismo por si algún botón lo llama así
+    path('registro/', views.inscribir_alumno, name='registro'),
 ]
