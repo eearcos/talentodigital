@@ -2,53 +2,46 @@ import os
 import time
 
 # --- DATOS INICIALES ---
-# Aca guardo los cursos y sus precios en un diccionario (clave: valor)
 cursos_disponibles = {
     "Ecommerce": 150000,
     "Growth Marketing": 120000,
     "Ads Avanzado": 90000
 }
 
-# Lista vacia para ir guardando a los alumnos que vaya registrando
 alumnos_inscritos = []
 
 # --- FUNCIONES DE AYUDA ---
 
 def limpiar_pantalla():
-    # Funcion simple para borrar la consola y que se vea ordenado
     if os.name == 'nt':
-        os.system('cls') # para windows
+        os.system('cls')
     else:
-        os.system('clear') # para mac/linux
+        os.system('clear')
 
 def mostrar_menu():
     print("\n--- GROWTH ACADEMY: SISTEMA INTERNO ---")
     print("1. Registrar nuevo alumno")
-    print("2. Ver alumnos inscritos")  # <--- NUEVA OPCIÓN
+    print("2. Ver alumnos inscritos")   # <--- NUEVA OPCIÓN
     print("3. Listar cursos disponibles")
-    print("4. Calcular cotización")
-    print("5. Verificar aprobación")
-    print("6. Salir") # <--- CAMBIA A 6
+    print("4. Calcular cotización (con descuentos)")
+    print("5. Verificar aprobación de alumno")
+    print("6. Salir")
 
 # --- LOGICA DEL SISTEMA ---
 
 def registrar_alumno():
     print("\n--- REGISTRO DE ALUMNO ---")
-    # Pido los datos basicos por teclado
     nombre = input("Ingrese nombre del alumno: ")
     apellido = input("Ingrese apellido del alumno: ")
     
-    # Valido que la edad sea un numero para que no se caiga el programa
     try:
         edad = int(input("Ingrese edad: "))
     except ValueError:
         print(">> Ojo: La edad tiene que ser un numero.")
         return
 
-    # Pregunto si tiene beca (si escribe "si", esto queda True)
     es_becado = input("¿Tiene beca? (si/no): ").lower() == "si"
 
-    # Guardo al alumno en un diccionario temporal
     nuevo_alumno = {
         "nombre": nombre,
         "apellido": apellido,
@@ -57,40 +50,39 @@ def registrar_alumno():
         "promedio": 0.0 
     }
     
-    # Agrego el diccionario a la lista general
     alumnos_inscritos.append(nuevo_alumno)
     print(f">> Listo! Alumno {nombre} guardado.")
 
-def ver_alumnos():
+def ver_alumnos():   # <--- NUEVA FUNCIÓN
     print("\n--- LISTA DE ALUMNOS ---")
     if len(alumnos_inscritos) == 0:
         print(">> No hay alumnos registrados todavía.")
     else:
-        # Recorro la lista de alumnos
         for i, alumno in enumerate(alumnos_inscritos, 1):
             estado_beca = "SI" if alumno["becado"] else "NO"
             print(f"{i}. {alumno['nombre']} {alumno['apellido']} | Edad: {alumno['edad']} | Beca: {estado_beca}")
 
 def listar_cursos():
     print("\n--- CATÁLOGO DE CURSOS ---")
-    # Uso un for para recorrer el diccionario y mostrar todo
     for curso, precio in cursos_disponibles.items():
         print(f"Curso: {curso} | 💰 Precio: ${precio}")
 
 def calcular_cotizacion():
     print("\n--- COTIZADOR ---")
-    listar_cursos() # Muestro los cursos primero para que sepa cual elegir
-    seleccion = input("Escribe el nombre del curso tal cual sale arriba: ")
-
-    # Reviso si el curso que escribio existe en mi diccionario
-    if seleccion in cursos_disponibles:
-        precio_base = cursos_disponibles[seleccion]
-        
+    listar_cursos()
+    seleccion_input = input("Escribe el nombre del curso: ").lower()
+    
+    curso_encontrado = None
+    for curso_real in cursos_disponibles:
+        if curso_real.lower() == seleccion_input:
+            curso_encontrado = curso_real
+            break
+            
+    if curso_encontrado:
+        precio_base = cursos_disponibles[curso_encontrado]
         descuento = 0
-        # Pido la edad de nuevo para ver si aplica descuento
         edad = int(input("Confirma tu edad para ver descuentos: "))
 
-        # Aca uso if/elif para ver cuanto descuento le toca
         if edad < 18:
             print(">> Tienes descuento Joven (10%)")
             descuento = precio_base * 0.10
@@ -100,9 +92,7 @@ def calcular_cotizacion():
         else:
             print(">> Precio normal (sin descuento).")
         
-        # Calculo final
         precio_final = precio_base - descuento
-        
         print(f"--------------------------------")
         print(f"Precio Original: ${precio_base}")
         print(f"Descuento:      -${descuento}")
@@ -113,7 +103,6 @@ def calcular_cotizacion():
 
 def verificar_aprobacion():
     print("\n--- VERIFICADOR DE NOTAS ---")
-    # Intento pedir las 3 notas y convertirlas a decimales
     try:
         nota1 = float(input("Nota modulo 1: "))
         nota2 = float(input("Nota modulo 2: "))
@@ -122,12 +111,9 @@ def verificar_aprobacion():
         print(">> Error: Tienen que ser numeros (ej: 5.5)")
         return
 
-    # Calculo el promedio simple
     promedio = (nota1 + nota2 + nota3) / 3
-    # Muestro solo 1 decimal para que se vea bien
     print(f"Promedio final: {promedio:.1f}")
 
-    # Si es mayor o igual a 4.0 pasa, si no reprueba
     if promedio >= 4.0:
         print(">> APROBADO")
     else:
@@ -136,29 +122,28 @@ def verificar_aprobacion():
 # --- BLOQUE PRINCIPAL ---
 
 def main():
-    # Uso un while True para que el menu no se cierre hasta que yo quiera
     while True:
         mostrar_menu()
         opcion = input("Elige una opcion: ")
 
         if opcion == "1":
             registrar_alumno()
-        elif opcion == "2":      # <--- NUEVO
+        elif opcion == "2":         # <--- NUEVA LÓGICA
             ver_alumnos()
-        elif opcion == "3":      # <--- Mueves los numeros
+        elif opcion == "3":
             listar_cursos()
         elif opcion == "4":
             calcular_cotizacion()
         elif opcion == "5":
             verificar_aprobacion()
-        elif opcion == "6":      # <--- Ahora salir es el 6
+        elif opcion == "6":         # <--- SALIR ES AHORA EL 6
             print("Cerrando... Nos vemos!")
             break
+        else:
+            print(">> Esa opcion no vale, intenta de nuevo.")
         
-        # Pausa para que alcance a leer antes de borrar pantalla
         input("\nPresiona ENTER para seguir...")
         limpiar_pantalla()
 
-# Esto hace que el codigo arranque solo si ejecuto este archivo
 if __name__ == "__main__":
     main()
