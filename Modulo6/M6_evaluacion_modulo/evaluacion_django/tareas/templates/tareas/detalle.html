@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="card">
+    <div class="card-header">Detalle de Tarea #{{ tarea.id }}</div>
+    <div class="card-body">
+        <h5 class="card-title">{{ tarea.titulo }}</h5>
+        <p class="card-text">{{ tarea.descripcion }}</p>
+        
+        <hr>
+        <a href="{% url 'lista_tareas' %}" class="btn btn-secondary">Volver</a>
+        <a href="{% url 'eliminar_tarea' tarea.id %}" class="btn btn-danger" onclick="return confirm('¿Estás seguro?');">Eliminar</a>
+    </div>
+</div>
+{% endblock %}
