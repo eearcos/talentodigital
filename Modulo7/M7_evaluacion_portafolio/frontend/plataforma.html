@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Aula Virtual | Growth Academy</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+</head>
+<body class="bg-light">
+
+    <div class="d-flex" id="wrapper">
+        <div class="bg-white border-end" id="sidebar-wrapper" style="width: 250px; min-height: 100vh;">
+            <div class="sidebar-heading border-bottom bg-primary text-white p-3">Growth Academy</div>
+            <div class="list-group list-group-flush">
+                <a href="#" class="list-group-item list-group-item-action list-group-item-light p-3 fw-bold active">📚 Módulo 1: Intro</a>
+                <a href="#" class="list-group-item list-group-item-action list-group-item-light p-3">💻 Módulo 2: Tech</a>
+                <a href="#" class="list-group-item list-group-item-action list-group-item-light p-3">📈 Módulo 3: Growth</a>
+                <a href="#" class="list-group-item list-group-item-action list-group-item-light p-3">🎓 Examen Final</a>
+            </div>
+            <div class="mt-auto p-3">
+                <a href="index.html" class="btn btn-danger w-100"><i class="bi bi-box-arrow-left"></i> Cerrar Sesión</a>
+            </div>
+        </div>
+
+        <div class="container-fluid p-4">
+            <h2 class="mb-4">Módulo 1: Fundamentos del E-commerce</h2>
+            
+            <div class="card shadow-sm mb-4">
+                <div class="card-body p-0">
+                    <div class="ratio ratio-16x9">
+                        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Clase" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <strong>Clase 1:</strong> Introducción al ecosistema digital.
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <div class="card shadow-sm h-100">
+                        <div class="card-header bg-info text-white"><i class="bi bi-download"></i> Material de Clase</div>
+                        <div class="card-body">
+                            <ul class="list-group">
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    Slide_Clase_1.pdf
+                                    <button class="btn btn-sm btn-outline-primary">Bajar</button>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    Calculadora_KPIs.xlsx
+                                    <button class="btn btn-sm btn-outline-primary">Bajar</button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <div class="card shadow-sm h-100">
+                        <div class="card-header bg-warning text-dark"><i class="bi bi-upload"></i> Entregar Tarea</div>
+                        <div class="card-body">
+                            <p class="small">Sube tu análisis del caso de estudio (PDF o Word).</p>
+                            <div class="mb-3">
+                                <input class="form-control" type="file" id="fileInput">
+                            </div>
+                            <button id="btnSubir" class="btn btn-success w-100">Enviar Tarea</button>
+                            
+                            <div id="uploadMsg" class="alert alert-success mt-3 d-none">
+                                <i class="bi bi-check-circle"></i> ¡Tarea recibida correctamente!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
